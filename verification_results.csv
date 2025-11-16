@@ -1,0 +1,91 @@
+image_name,actual_class,gardner_grade,expansion,icm_quality,te_quality,quality_score,explanation,full_response,image_path
+D5_368.jpg,1,3AA,3,A,A,Good,"The blastocyst is fully expanded within the zona pellucida, showing a tightly packed inner cell mass and a cohesive trophectoderm layer.","Grade: 3AA
+Expansion: 3
+ICM: A
+TE: A
+Quality: Good
+Brief explanation: The blastocyst is fully expanded within the zona pellucida, showing a tightly packed inner cell mass and a cohesive trophectoderm layer.",verification_results/images/D5_368.jpg
+D5_277.jpg,0,1AA,1,A,A,Good,The embryo is a compacted morula or an extremely early blastocyst with a minimal or nascent blastocoel. The cellular compaction and apparent cell numbers for both the forming ICM and TE are excellent for this developmental stage.,"Grade: 1AA
+Expansion: 1
+ICM: A
+TE: A
+Quality: Good
+Brief explanation: The embryo is a compacted morula or an extremely early blastocyst with a minimal or nascent blastocoel. The cellular compaction and apparent cell numbers for both the forming ICM and TE are excellent for this developmental stage.",verification_results/images/D5_277.jpg
+D3_084.jpg,0,Not Applicable,Not Applicable,Not Applicable,Not Applicable,Cannot be assessed by Gardner Scale,"The provided image displays a cleavage-stage embryo (approximately 8-cell stage), not a blastocyst. The Gardner Scale is specifically designed to evaluate blastocyst-stage embryos, which exhibit a blastocoel, inner cell mass (ICM), and trophectoderm (TE), none of which are present in this image.","Grade: Not Applicable
+Expansion: Not Applicable
+ICM: Not Applicable
+TE: Not Applicable
+Quality: Cannot be assessed by Gardner Scale
+Brief explanation: The provided image displays a cleavage-stage embryo (approximately 8-cell stage), not a blastocyst. The Gardner Scale is specifically designed to evaluate blastocyst-stage embryos, which exhibit a blastocoel, inner cell mass (ICM), and trophectoderm (TE), none of which are present in this image.",verification_results/images/D3_084.jpg
+D5_399.jpg,0,N/A,N/A,N/A,N/A,Cannot be determined by Gardner Scale,"This image displays a cleavage-stage embryo (likely 4-8 cells), not a blastocyst. The Gardner Scale is specifically designed for grading blastocyst-stage embryos, which are characterized by a blastocoel cavity, inner cell mass, and trophectoderm.","Grade: N/A
+Expansion: N/A
+ICM: N/A
+TE: N/A
+Quality: Cannot be determined by Gardner Scale
+Brief explanation: This image displays a cleavage-stage embryo (likely 4-8 cells), not a blastocyst. The Gardner Scale is specifically designed for grading blastocyst-stage embryos, which are characterized by a blastocoel cavity, inner cell mass, and trophectoderm.",verification_results/images/D5_399.jpg
+D3_458.jpg,0,N/A,N/A,N/A,N/A,N/A,"This image displays an early cleavage-stage embryo (appears to be a 4-cell embryo), not a blastocyst. The Gardner Scale is specifically designed for grading blastocyst-stage embryos and therefore cannot be applied at this developmental stage.","Grade: N/A
+Expansion: N/A
+ICM: N/A
+TE: N/A
+Quality: N/A
+Brief explanation: This image displays an early cleavage-stage embryo (appears to be a 4-cell embryo), not a blastocyst. The Gardner Scale is specifically designed for grading blastocyst-stage embryos and therefore cannot be applied at this developmental stage.",verification_results/images/D3_458.jpg
+D3_539.jpg,0,N/A,N/A,N/A,N/A,Cannot assess using Gardner Scale,"The image displays a cleavage-stage embryo, not a blastocyst. The Gardner Scale is used exclusively for grading blastocyst-stage embryos, therefore it cannot be applied here.","Grade: N/A
+Expansion: N/A
+ICM: N/A
+TE: N/A
+Quality: Cannot assess using Gardner Scale
+Brief explanation: The image displays a cleavage-stage embryo, not a blastocyst. The Gardner Scale is used exclusively for grading blastocyst-stage embryos, therefore it cannot be applied here.",verification_results/images/D3_539.jpg
+D3_436.jpg,0,1BB,1,B,B,Poor,"This is an early blastocyst with a small, nascent blastocoel cavity (stage 1). Both the inner cell mass and trophectoderm consist of loosely grouped cells that are not yet well-differentiated (B quality).","Grade: 1BB
+Expansion: 1
+ICM: B
+TE: B
+Quality: Poor
+Brief explanation: This is an early blastocyst with a small, nascent blastocoel cavity (stage 1). Both the inner cell mass and trophectoderm consist of loosely grouped cells that are not yet well-differentiated (B quality).",verification_results/images/D3_436.jpg
+D3_401.jpg,0,N/A (Not a blastocyst),N/A,N/A,N/A,Not applicable (Cannot be graded by Gardner Scale),"This image displays a zygote or very early cleavage stage embryo, not a blastocyst. The Gardner Scale is exclusively used for grading blastocyst-stage embryos, which this image does not represent.","Grade: N/A (Not a blastocyst)
+Expansion: N/A
+ICM: N/A
+TE: N/A
+Quality: Not applicable (Cannot be graded by Gardner Scale)
+Brief explanation: This image displays a zygote or very early cleavage stage embryo, not a blastocyst. The Gardner Scale is exclusively used for grading blastocyst-stage embryos, which this image does not represent.",verification_results/images/D3_401.jpg
+D3_015.jpg,0,N/A,N/A,N/A,N/A,Not applicable (Gardner Scale),"This image displays a cleavage-stage embryo, likely around the 6-8 cell stage, not a blastocyst. The Gardner Scale is exclusively used to grade blastocyst-stage embryos, which possess a blastocoel cavity, inner cell mass (ICM), and trophectoderm (TE). These structures are not yet developed in this embryo.","Grade: N/A
+Expansion: N/A
+ICM: N/A
+TE: N/A
+Quality: Not applicable (Gardner Scale)
+Brief explanation: This image displays a cleavage-stage embryo, likely around the 6-8 cell stage, not a blastocyst. The Gardner Scale is exclusively used to grade blastocyst-stage embryos, which possess a blastocoel cavity, inner cell mass (ICM), and trophectoderm (TE). These structures are not yet developed in this embryo.",verification_results/images/D3_015.jpg
+D3_664.jpg,0,N/A,N/A,N/A,N/A,N/A,"This embryo is a compact morula (likely Day 4) and has not yet formed a blastocoel cavity, which is a prerequisite for classification as a blastocyst (Gardner stages 1-6). Therefore, the Gardner Scale, designed for blastocyst-stage embryos, is not applicable to this image.","Grade: N/A
+Expansion: N/A
+ICM: N/A
+TE: N/A
+Quality: N/A
+Brief explanation: This embryo is a compact morula (likely Day 4) and has not yet formed a blastocoel cavity, which is a prerequisite for classification as a blastocyst (Gardner stages 1-6). Therefore, the Gardner Scale, designed for blastocyst-stage embryos, is not applicable to this image.",verification_results/images/D3_664.jpg
+D3_231.jpg,0,N/A,N/A,N/A,N/A,Ungradable,"This embryo is a morula stage and has not yet developed into a blastocyst, as indicated by the absence of a visible blastocoel cavity and differentiated inner cell mass/trophectoderm. The Gardner Scale is specifically designed for blastocyst-stage embryos, therefore it cannot be applied to this image.","Grade: N/A
+Expansion: N/A
+ICM: N/A
+TE: N/A
+Quality: Ungradable
+Brief explanation: This embryo is a morula stage and has not yet developed into a blastocyst, as indicated by the absence of a visible blastocoel cavity and differentiated inner cell mass/trophectoderm. The Gardner Scale is specifically designed for blastocyst-stage embryos, therefore it cannot be applied to this image.",verification_results/images/D3_231.jpg
+D3_095.jpg,0,2AA,2,A,A,Good,"This is an early blastocyst (stage 2) where the blastocoel is more than half the embryo's volume. Both the inner cell mass and trophectoderm exhibit good quality, with tightly packed cells forming a cohesive structure.","Grade: 2AA
+Expansion: 2
+ICM: A
+TE: A
+Quality: Good
+Brief explanation: This is an early blastocyst (stage 2) where the blastocoel is more than half the embryo's volume. Both the inner cell mass and trophectoderm exhibit good quality, with tightly packed cells forming a cohesive structure.",verification_results/images/D3_095.jpg
+D3_116.jpg,0,Not applicable (Early cleavage stage),Not applicable,Not applicable,Not applicable,Not applicable,"This image displays an early cleavage-stage embryo (likely 4-cell or 8-cell stage), not a blastocyst. The Gardner Scale is specifically designed to evaluate blastocyst-stage embryos, which exhibit an inner cell mass (ICM), trophectoderm (TE), and a blastocoel cavity.","Grade: Not applicable (Early cleavage stage)
+Expansion: Not applicable
+ICM: Not applicable
+TE: Not applicable
+Quality: Not applicable
+Brief explanation: This image displays an early cleavage-stage embryo (likely 4-cell or 8-cell stage), not a blastocyst. The Gardner Scale is specifically designed to evaluate blastocyst-stage embryos, which exhibit an inner cell mass (ICM), trophectoderm (TE), and a blastocoel cavity.",verification_results/images/D3_116.jpg
+D3_498.jpg,0,N/A (Not a blastocyst),N/A,N/A,N/A,N/A,"The provided image shows a cleavage-stage embryo (likely 6-8 cells), not a blastocyst. The Gardner Scale is specifically designed for grading blastocyst-stage embryos, and therefore cannot be applied to this embryo.","Grade: N/A (Not a blastocyst)
+Expansion: N/A
+ICM: N/A
+TE: N/A
+Quality: N/A
+Brief explanation: The provided image shows a cleavage-stage embryo (likely 6-8 cells), not a blastocyst. The Gardner Scale is specifically designed for grading blastocyst-stage embryos, and therefore cannot be applied to this embryo.",verification_results/images/D3_498.jpg
+D5_003.jpg,1,4AA,4,A,A,Good,"The embryo is an expanded blastocyst, fully distending the zona pellucida. It has a tightly packed inner cell mass with many cells and a cohesive trophectoderm with numerous cells.","Grade: 4AA
+Expansion: 4
+ICM: A
+TE: A
+Quality: Good
+Brief explanation: The embryo is an expanded blastocyst, fully distending the zona pellucida. It has a tightly packed inner cell mass with many cells and a cohesive trophectoderm with numerous cells.",verification_results/images/D5_003.jpg
