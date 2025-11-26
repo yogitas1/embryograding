@@ -1,0 +1,7 @@
+# Embryo Grading System - Python Dependencies
+
+# Google Generative AI SDK for Gemini API
+google-generativeai>=0.3.0
+
+# Core dependencies (usually pre-installed)
+pathlib2>=2.3.0; python_version < '3.4'
