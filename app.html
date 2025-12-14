@@ -651,13 +651,19 @@ TE: [A, B, C, or N/A]
 Quality: [Excellent, Good, Fair, Poor, or Not Applicable]
 Explanation: [2-3 sentences explaining your grading in detail, mentioning specific features you observe]`;
 
+            // Detect mime type from file if available, default to jpeg
+            let mimeType = "image/jpeg";
+            if (selectedFile) {
+                mimeType = selectedFile.type || "image/jpeg";
+            }
+
             const requestBody = {
                 contents: [{
                     parts: [
                         { text: prompt },
                         {
                             inline_data: {
-                                mime_type: "image/jpeg",
+                                mime_type: mimeType,
                                 data: imageBase64
                             }
                         }
@@ -672,8 +678,8 @@ Explanation: [2-3 sentences explaining your grading in detail, mentioning specif
             };
 
             // Construct API URL with the provided key
-            // Using gemini-1.5-flash which has a generous free tier (15 RPM, 1M TPM, 1500 RPD)
-            const apiUrl = `https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
+            // Using gemini-pro-vision for image analysis (60 RPM free tier)
+            const apiUrl = `https://generativelanguage.googleapis.com/v1/models/gemini-pro-vision:generateContent?key=${apiKey}`;
 
             const response = await fetch(apiUrl, {
                 method: 'POST',
