@@ -365,6 +365,31 @@
             <p>EmbryoGrade AI provides instant, consistent, and standardized embryo grading using advanced AI technology. Reduce grading time from 5-10 minutes to under 10 seconds while ensuring consistent results across all assessments.</p>
         </div>
 
+        <!-- API Key Section -->
+        <div class="upload-section" style="margin-bottom: 30px;">
+            <h2>🔐 API Configuration</h2>
+            <div style="max-width: 600px; margin: 0 auto;">
+                <p style="color: #666; margin-bottom: 20px; text-align: center;">
+                    Enter your Google Gemini API key to start analyzing embryos. Your key is only stored in memory and never saved.
+                </p>
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <input 
+                        type="password" 
+                        id="apiKeyInput" 
+                        placeholder="Enter your Gemini API key"
+                        style="flex: 1; padding: 15px; font-size: 1em; border: 2px solid #ddd; border-radius: 8px; font-family: monospace;"
+                    />
+                    <button id="toggleApiKey" class="btn btn-secondary" style="padding: 15px 20px; margin: 0;">
+                        👁️
+                    </button>
+                </div>
+                <p style="font-size: 0.9em; color: #999; margin-top: 10px; text-align: center;">
+                    Get your API key from: <a href="https://makersuite.google.com/app/apikey" target="_blank" style="color: #667eea;">Google AI Studio</a>
+                </p>
+                <div id="apiKeyStatus" style="margin-top: 15px; padding: 10px; border-radius: 8px; text-align: center; display: none;"></div>
+            </div>
+        </div>
+
         <!-- Upload Section -->
         <div class="upload-section">
             <h2>Upload Embryo Image for Analysis</h2>
@@ -439,10 +464,6 @@
     </div>
 
     <script type="module">
-        // IMPORTANT: Replace with your actual Google Gemini API key
-        const GEMINI_API_KEY = 'YOUR_GEMINI_API_KEY_HERE';
-        const GEMINI_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent?key=${GEMINI_API_KEY}`;
-
         const uploadArea = document.getElementById('uploadArea');
         const fileInput = document.getElementById('fileInput');
         const previewContainer = document.getElementById('previewContainer');
@@ -452,9 +473,41 @@
         const loading = document.getElementById('loading');
         const resultsSection = document.getElementById('resultsSection');
         const analyzeAnotherBtn = document.getElementById('analyzeAnotherBtn');
+        const apiKeyInput = document.getElementById('apiKeyInput');
+        const toggleApiKeyBtn = document.getElementById('toggleApiKey');
+        const apiKeyStatus = document.getElementById('apiKeyStatus');
 
         let selectedFile = null;
         let selectedFileBase64 = null;
+
+        // Toggle API key visibility
+        toggleApiKeyBtn.addEventListener('click', () => {
+            if (apiKeyInput.type === 'password') {
+                apiKeyInput.type = 'text';
+                toggleApiKeyBtn.textContent = '🔒';
+            } else {
+                apiKeyInput.type = 'password';
+                toggleApiKeyBtn.textContent = '👁️';
+            }
+        });
+
+        // Validate API key format
+        apiKeyInput.addEventListener('input', () => {
+            const key = apiKeyInput.value.trim();
+            if (key.length === 0) {
+                apiKeyStatus.style.display = 'none';
+            } else if (key.length < 20) {
+                apiKeyStatus.style.display = 'block';
+                apiKeyStatus.style.background = '#fff3cd';
+                apiKeyStatus.style.color = '#856404';
+                apiKeyStatus.textContent = '⚠️ API key seems too short';
+            } else {
+                apiKeyStatus.style.display = 'block';
+                apiKeyStatus.style.background = '#d4edda';
+                apiKeyStatus.style.color = '#155724';
+                apiKeyStatus.textContent = '✅ API key format looks good';
+            }
+        });
 
         // Upload area click
         uploadArea.addEventListener('click', () => {
@@ -528,9 +581,19 @@
         analyzeBtn.addEventListener('click', async () => {
             if (!selectedFile || !selectedFileBase64) return;
 
-            // Check if API key is set
-            if (GEMINI_API_KEY === 'YOUR_GEMINI_API_KEY_HERE') {
-                alert('⚠️ Please set your Google Gemini API key in the code!\n\nGet your API key from: https://makersuite.google.com/app/apikey');
+            // Get API key from input
+            const apiKey = apiKeyInput.value.trim();
+            
+            // Validate API key
+            if (!apiKey) {
+                alert('⚠️ Please enter your Google Gemini API key above!\n\nGet your API key from: https://makersuite.google.com/app/apikey');
+                apiKeyInput.focus();
+                return;
+            }
+
+            if (apiKey.length < 20) {
+                alert('⚠️ The API key seems invalid (too short).\n\nPlease check your API key and try again.');
+                apiKeyInput.focus();
                 return;
             }
 
@@ -541,8 +604,8 @@
             const startTime = Date.now();
             
             try {
-                // Call Gemini API
-                const result = await gradeEmbryoWithGemini(selectedFileBase64);
+                // Call Gemini API with the provided key
+                const result = await gradeEmbryoWithGemini(selectedFileBase64, apiKey);
                 
                 const endTime = Date.now();
                 const processingTime = ((endTime - startTime) / 1000).toFixed(2);
@@ -572,7 +635,7 @@
             resultsSection.style.display = 'none';
         });
 
-        async function gradeEmbryoWithGemini(imageBase64) {
+        async function gradeEmbryoWithGemini(imageBase64, apiKey) {
             const prompt = `You are an expert embryologist. Analyze this IVF embryo image and provide a Gardner Scale grade.
 
 The Gardner Scale grades blastocyst-stage embryos based on:
@@ -608,7 +671,10 @@ Explanation: [2-3 sentences explaining your grading in detail, mentioning specif
                 }
             };
 
-            const response = await fetch(GEMINI_API_URL, {
+            // Construct API URL with the provided key
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent?key=${apiKey}`;
+
+            const response = await fetch(apiUrl, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

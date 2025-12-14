@@ -1,0 +1,24 @@
+# API Keys and sensitive configuration
+config.js
+.env
+*.key
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Node modules (if you add npm later)
+node_modules/
+
+# Python virtual environments (if you add Python backend later)
+venv/
+__pycache__/
+*.pyc
+
