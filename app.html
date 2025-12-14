@@ -678,8 +678,8 @@ Explanation: [2-3 sentences explaining your grading in detail, mentioning specif
             };
 
             // Construct API URL with the provided key
-            // Using gemini-pro-vision for image analysis (60 RPM free tier)
-            const apiUrl = `https://generativelanguage.googleapis.com/v1/models/gemini-pro-vision:generateContent?key=${apiKey}`;
+            // Using gemini-1.5-flash-latest for image analysis (same as your Python script)
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${apiKey}`;
 
             const response = await fetch(apiUrl, {
                 method: 'POST',
